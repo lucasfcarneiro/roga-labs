@@ -10,7 +10,7 @@ class BaseApplication : Application() {
         startKoin {
             modules(
                 listOf(
-
+                    //modulos
                 )
             ).androidContext(applicationContext)
         }
