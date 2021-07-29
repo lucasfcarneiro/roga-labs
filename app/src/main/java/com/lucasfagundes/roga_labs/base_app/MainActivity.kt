@@ -1,4 +1,4 @@
-package com.lucasfagundes.roga_labs
+package com.lucasfagundes.roga_labs.base_app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
