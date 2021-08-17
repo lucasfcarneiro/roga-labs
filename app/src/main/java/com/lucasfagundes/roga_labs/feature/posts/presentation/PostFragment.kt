@@ -17,8 +17,7 @@ class PostFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentPostBinding.inflate(inflater, container,false)
+        binding = FragmentPostBinding.inflate(inflater, container, false)
         return binding.root
     }
-
 }
