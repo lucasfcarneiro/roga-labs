@@ -1,4 +1,4 @@
-package com.lucasfagundes.roga_labs.feature.posts
+package com.lucasfagundes.roga_labs.feature.posts.presentation.model
 
 class PostModel(
     val userId : Int,

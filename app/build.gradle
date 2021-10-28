@@ -50,9 +50,7 @@ dependencies {
 
 
     // Test library
-    testImplementation "junit:junit:$junit_version"
-    androidTestImplementation "androidx.test.ext:$androidjunit_version"
-    androidTestImplementation "androidx.test.espresso:$espresso_version"
+
 
     // Koin Library
     implementation "io.insert-koin:koin-core:$koin_version"

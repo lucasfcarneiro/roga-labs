@@ -1,17 +1,17 @@
 package com.lucasfagundes.roga_labs.feature.posts.presentation
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import com.lucasfagundes.roga_labs.databinding.FragmentPostBinding
-import com.lucasfagundes.roga_labs.feature.posts.ApiRequests
+import com.lucasfagundes.roga_labs.feature.posts.presentation.model.PostModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-
-const val BASE_URL = "https://jsonplaceholder.typicode.com/"
+import android.widget.Toast
+import com.lucasfagundes.roga_labs.feature.posts.adapter.PostListAdapter
 
 class PostFragment : Fragment() {
 
@@ -22,6 +22,7 @@ class PostFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         binding = FragmentPostBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -29,18 +30,29 @@ class PostFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        getData()
+        handleObserver()
     }
 
-    private fun getData() {
-        val retrofitBuilder = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(BASE_URL)
-            .build()
-            .create(ApiRequests::class.java)
+    private fun handleObserver() {
+        viewModel.postList.observe(viewLifecycleOwner,
+            Observer(::handleRecyclerView))
 
-        val retrofitData = retrofitBuilder.getPostData()
+        viewModel.error.observe(viewLifecycleOwner,
+            Observer(::handleError))
     }
+
+    private fun handleRecyclerView(list: List<PostModel>) {
+        val postAdapter = PostListAdapter(list)
+    }
+
+    private fun handleError(message: String){
+        Toast.makeText(context, message , Toast.LENGTH_LONG).show()
+    }
+
+
 }
+
+
+
 
 
