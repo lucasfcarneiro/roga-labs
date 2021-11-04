@@ -1,6 +1,5 @@
 package com.lucasfagundes.roga_labs.feature.posts.presentation
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -34,22 +33,25 @@ class PostFragment : Fragment() {
     }
 
     private fun handleObserver() {
-        viewModel.postList.observe(viewLifecycleOwner,
-            Observer(::handleRecyclerView))
+        viewModel.postList.observe(
+            viewLifecycleOwner,
+            Observer(::handleRecyclerView)
+        )
 
-        viewModel.error.observe(viewLifecycleOwner,
-            Observer(::handleError))
+        viewModel.error.observe(
+            viewLifecycleOwner,
+            Observer(::handleError)
+        )
     }
 
     private fun handleRecyclerView(list: List<PostModel>) {
         val postAdapter = PostListAdapter(list)
+        binding.recentPostRecyclerView.adapter = postAdapter
     }
 
-    private fun handleError(message: String){
-        Toast.makeText(context, message , Toast.LENGTH_LONG).show()
+    private fun handleError(message: String) {
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
     }
-
-
 }
 
 

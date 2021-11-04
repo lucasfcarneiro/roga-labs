@@ -49,9 +49,6 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
 
-    // Test library
-
-
     // Koin Library
     implementation "io.insert-koin:koin-core:$koin_version"
     implementation "io.insert-koin:koin-android:$koin_version"
