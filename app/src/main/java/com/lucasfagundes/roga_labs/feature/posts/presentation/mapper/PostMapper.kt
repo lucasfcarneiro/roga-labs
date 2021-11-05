@@ -1,6 +1,6 @@
-package com.lucasfagundes.roga_labs.feature.posts.presentation
+package com.lucasfagundes.roga_labs.feature.posts.presentation.mapper
 
-import com.lucasfagundes.roga_labs.feature.posts.data_source.model.PostResponse
+import com.lucasfagundes.roga_labs.feature.posts.data_remote.model.PostResponse
 import com.lucasfagundes.roga_labs.feature.posts.presentation.model.PostModel
 
 object PostMapper {

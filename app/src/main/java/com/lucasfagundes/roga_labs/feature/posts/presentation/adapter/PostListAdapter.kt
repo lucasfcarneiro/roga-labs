@@ -1,4 +1,4 @@
-package com.lucasfagundes.roga_labs.feature.posts.adapter
+package com.lucasfagundes.roga_labs.feature.posts.presentation.adapter
 
 import android.view.ViewGroup
 import android.view.LayoutInflater
@@ -21,7 +21,7 @@ class PostListAdapter(private val list: List<PostModel>) :
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: PostListAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(list[position])
     }
 

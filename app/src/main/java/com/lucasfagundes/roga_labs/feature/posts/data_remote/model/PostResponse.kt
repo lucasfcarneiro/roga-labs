@@ -1,4 +1,4 @@
-package com.lucasfagundes.roga_labs.feature.posts.data_source.model
+package com.lucasfagundes.roga_labs.feature.posts.data_remote.model
 
 import com.google.gson.annotations.SerializedName
 

@@ -10,7 +10,7 @@ import com.lucasfagundes.roga_labs.databinding.FragmentPostBinding
 import com.lucasfagundes.roga_labs.feature.posts.presentation.model.PostModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import android.widget.Toast
-import com.lucasfagundes.roga_labs.feature.posts.adapter.PostListAdapter
+import com.lucasfagundes.roga_labs.feature.posts.presentation.adapter.PostListAdapter
 
 class PostFragment : Fragment() {
 
@@ -42,6 +42,9 @@ class PostFragment : Fragment() {
             viewLifecycleOwner,
             Observer(::handleError)
         )
+
+        viewModel.commentList.observe(viewLifecycleOwner,
+            Observer (::handleComment))
     }
 
     private fun handleRecyclerView(list: List<PostModel>) {
@@ -51,6 +54,10 @@ class PostFragment : Fragment() {
 
     private fun handleError(message: String) {
         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+    }
+
+    private fun handleComment(){
+
     }
 }
 
