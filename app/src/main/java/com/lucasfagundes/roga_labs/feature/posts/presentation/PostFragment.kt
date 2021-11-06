@@ -10,7 +10,9 @@ import com.lucasfagundes.roga_labs.databinding.FragmentPostBinding
 import com.lucasfagundes.roga_labs.feature.posts.presentation.model.PostModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import android.widget.Toast
+import com.lucasfagundes.roga_labs.feature.posts.presentation.adapter.CommentListAdapter
 import com.lucasfagundes.roga_labs.feature.posts.presentation.adapter.PostListAdapter
+import com.lucasfagundes.roga_labs.feature.posts.presentation.model.CommentModel
 
 class PostFragment : Fragment() {
 
@@ -56,8 +58,9 @@ class PostFragment : Fragment() {
         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
     }
 
-    private fun handleComment(){
-
+    private fun handleComment(list: List<CommentModel>){
+        val commentAdapter = CommentListAdapter(list)
+        binding.
     }
 }
 
