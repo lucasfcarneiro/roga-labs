@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">roga-labs</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="recent_post">Postagens Recentes</string>
+    <string name="what_people_commented_about_it">O que a galera comentou sobre</string>
 </resources>

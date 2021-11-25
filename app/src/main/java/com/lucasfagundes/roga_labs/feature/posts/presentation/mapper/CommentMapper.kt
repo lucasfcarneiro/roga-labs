@@ -19,7 +19,7 @@ object CommentMapper {
                 id = it.id ?: 0,
                 name = it.name ?: "",
                 email = it.email ?: "",
-                body = it.body ?: ""
+                comment = it.body ?: ""
             )
         }
 }

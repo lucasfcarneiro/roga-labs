@@ -47,7 +47,7 @@ class PostsViewModel(private val postRemoteDataSource: PostRemoteDataSource) : V
         )
     }
 
-    private fun getCommentsVM(postId:Int) {
+    fun getPostCommentsVM(postId:Int) {
         postRemoteDataSource.getCommentsFromSource(postId).enqueue(
             object : Callback<List<CommentResponse>> {
                 override fun onResponse(
